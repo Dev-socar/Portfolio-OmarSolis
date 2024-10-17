@@ -1,0 +1,44 @@
+---
+import GitHubIcon from "./icons/GitHub.astro";
+import EnlaceIcon from "./icons/Enlace.astro";
+import SocialPill from "./SocialPill.astro";
+import Tag from "./Tag.astro";
+
+const { proyecto } = Astro.props;
+const { tecnologias } = proyecto;
+---
+
+<div
+  class="col-span-12 sm:col-span-6 lg:col-span-4 border dark:border-zinc-700 rounded-xl shadow-sm p-5"
+>
+  <div class="flex justify-between items-center">
+    <div class="flex gap-2">
+      {tecnologias.map((tecnologia: string) => <Tag tecnologia={tecnologia} />)}
+    </div>
+  </div>
+  <h3 class="font-semibold my-3 text-base text-zinc-900 dark:text-white">
+    <a class="underline" href={proyecto.demoLink}>{proyecto.titulo}</a>
+  </h3>
+  <p class="mb-2 text-sm text-zinc-600 dark:text-zinc-400">
+    {proyecto.categoria}
+  </p>
+  <div class="line-clamp-2 text-zinc-600 dark:text-zinc-300 mb-4 min-h-[50px]">
+    <p class="text-base">{proyecto.descripcion}</p>
+  </div>
+  <div class="flex justify-end gap-3">
+    {
+      proyecto.demoLink && (
+        <SocialPill href={proyecto.demoLink}>
+          <EnlaceIcon class="size-6 text-black dark:text-white" />
+        </SocialPill>
+      )
+    }
+    {
+      proyecto.repoLink && (
+        <SocialPill href={proyecto.repoLink}>
+          <GitHubIcon class="size-6 text-black dark:text-white" />
+        </SocialPill>
+      )
+    }
+  </div>
+</div>

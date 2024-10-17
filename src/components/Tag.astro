@@ -1,0 +1,23 @@
+---
+interface Props {
+  tecnologia?: string;
+}
+import { iconos } from "@src/projects/project";
+const { tecnologia  } = Astro.props;
+const iconUrl = tecnologia ? iconos[tecnologia.toLowerCase()] : null;
+---
+
+<span
+  class="border border-zinc-300 dark:border-zinc-700 rounded-full
+                    text-sm text-zinc-700 dark:text-zinc-300 no-underline p-1.5
+                    transition-all duration-700
+                  hover:border-zinc-700 dark:hover:border-zinc-300"
+>
+  {
+    iconUrl ? (
+      <img src={iconUrl} alt={tecnologia} title={tecnologia} class="size-6" />
+    ) : (
+      tecnologia
+    )
+  }
+</span>

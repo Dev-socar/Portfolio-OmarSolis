@@ -1,0 +1,27 @@
+---
+interface Props {
+  titulo: string;
+  fecha: string;
+  descripcion?: string;
+  empresa?: string;
+}
+const { titulo, fecha, descripcion, empresa } = Astro.props;
+---
+
+<div class="flex">
+  <div class="education__time">
+    <span class="w-4 h-4 bg-orange-500 dark:bg-blue-500 block rounded-full mt-1"
+    ></span>
+    <span
+      class="education__line bg-orange-500 dark:bg-blue-500 block h-full w-[2px] translate-x-[7px]"
+    ></span>
+  </div>
+  <div class="experience__data bd-grid px-5">
+    <h3 class="font-extrabold mb-1 text-base">{titulo}</h3>
+    <span class="text-sm block text-zinc-500 dark:text-orange-300">{fecha}</span>
+    <span class="text-sm block my-2 font-semibold">{empresa}</span>
+    <p class="my-3 text-justify text-base">
+      {descripcion}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+---
+import EducacionIcon from "../icons/Educacion.astro";
+import MaletinIcon from "../icons/Maletin.astro";
+import TimeLineElement from "./TimeLineElement.astro";
+const experencia = [
+  {
+    titulo: "Desarrollador Web FullStack",
+    fecha: "Enero 2022 - Presente",
+    descripcion:
+      "Encargado de la recopilación de requerimientos, diseño de mockups, creación y estructuración de bases de datos, desarrollo completo de frontend y backend, y despliegue integral de aplicaciones web.",
+    empresa: "Freelancer",
+  },
+  {
+    titulo: "Desarrollador Web FullStack",
+    fecha: "Julio 2021 - Enero 2022",
+    descripcion:
+      "Encargado de la recopilación de requerimientos, diseño de mockups, creación y estructuración de bases de datos, desarrollo completo de frontend y backend, y despliegue integral de aplicaciones web.",
+    empresa: "Expertos en Terrenos Juanito Rivas",
+  },
+];
+---
+
+<div class="mb-5">
+  <div class="text-lg w-full font-bold flex items-center gap-2 mb-2">
+    <EducacionIcon />
+    <h2>Educacion</h2>
+  </div>
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      titulo="Licenciatura en Ciencias de la Computacion"
+      fecha="2017 hasta la actualidad en la Universidad Autonoma de Yucatan, Merida, Yucatan"
+    />
+    <TimeLineElement
+      titulo="Tecnico en Programacion"
+      fecha="2014 a 2017 en el Cbtis 72, Felipe Carrillo Puerto, Quintana Roo"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-lg w-full font-bold flex items-center gap-2 mb-2">
+      <MaletinIcon />
+      <h2>Experiencia</h2>
+    </div>
+  </div>
+  <div class="time-line-container mb-10">
+    {
+      experencia.map((e) => (
+        <TimeLineElement
+          titulo={e.titulo}
+          fecha={e.fecha}
+          descripcion={e.descripcion}
+          empresa={e.empresa}
+        />
+      ))
+    }
+  </div>
+</div>
