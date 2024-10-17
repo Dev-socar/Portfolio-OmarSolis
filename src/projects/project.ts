@@ -27,8 +27,7 @@ export const projects: Project[] = [
     titulo: "APV.com",
     categoria: "Frontend",
     descripcion: "Web App para administrar pacientes de una Veterinaria",
-    demoLink:
-      "https://apv-frontend-9hv73r3zs-omars-projects-d25f4087.vercel.app/",
+    demoLink: "https://apv-frontend-smoky.vercel.app/",
     repoLink: "https://github.com/Dev-socar/apv-frontend",
     tecnologias: ["react", "vite", "tailwind", "vercel"],
   },
