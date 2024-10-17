@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Omar Solis - Sobre Mi">
+  <section>
+    <main>
+      <div class="w-full md:flex md:items-center gap-16 mb-10">
+        <div class="leading-9">
+          <h1 class="text-center md:text-left text-4xl font-bold mb-4">
+            Un Poco Sobre Mi!
+          </h1>
+          <div>
+            <div class="text-lg space-y-2">
+              <p>
+                Actualmente tengo 25 years de edad, resido en la ciudad de Merida, Yucatan.
+                
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <img
+          src="/omarLogo.jpeg"
+          alt="Omar Solis"
+          loading="eager"
+          class="rounded-3xl rotate-3 mx-4 md:mx-0"
+          width="300"
+          height="300"
+          decoding="async"
+        />
+      </div>
+    </main>
+  </section>
+</Layout>
+
+<style>
+  main,
+  section {
+    margin: auto;
+    padding: 1rem;
+    width: 1000px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
