@@ -1,0 +1,23 @@
+---
+const { certificado } = Astro.props;
+---
+
+<div
+  class="border border-zinc-900 dark:border-zinc-500 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all p-3 flex flex-col gap-2 md:flex-row md:gap-0 md:items-center md:justify-between"
+>
+  <div>
+    <h2 class="text-zinc-800 dark:text-white text-xl font-semibold">{certificado.titulo}</h2>
+    <time
+      datetime={certificado.fecha}
+      class="text-base text-zinc-500  dark:text-zinc-200">{certificado.fecha}</time
+    >
+    <p class="text-sm  text-zinc-500 dark:text-zinc-200">{certificado.empresa}</p>
+  </div>
+  <a
+    href={certificado.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-base underline dark:prose-invert text-zinc-900 dark:text-white"
+    >Ver Certificado »</a
+  >
+</div>

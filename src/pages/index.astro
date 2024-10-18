@@ -13,7 +13,7 @@ const lastProjects = projects.slice(0, 6);
 
 <Layout title="Omar Solis - Portafolio Web">
   <section>
-    <div class="w-full md:flex md:items-center gap-16 mb-10">
+    <div class="w-full flex flex-col gap-5 md:flex-row md:items-center md:gap-16 mb-10">
       <div class="leading-9">
         <h1 class="text-center md:text-left text-4xl font-bold mb-4">
           Hola 👋, Soy Omar!
@@ -40,12 +40,12 @@ const lastProjects = projects.slice(0, 6);
               +3 años de experiencia. <span
                 class="text-blue-400 dark:text-orange-200"
                 >Desarrollador Web</span
-              > de Merida, Yucatan 🇲🇽. Me encanta compartir mi conocimiento en mi
+              > de Mérida, Yucatán 🇲🇽. Me encanta compartir mi conocimiento en mi
               canal de Youtube
               <a
                 class="text-orange-500 dark:text-blue-500 hover:underline transition"
                 href="https://www.youtube.com/@AmantesDelCodigo"
-                target="_blank">Amantes del Codigo</a
+                target="_blank">Amantes del Código</a
               >.
             </p>
            
@@ -66,14 +66,14 @@ const lastProjects = projects.slice(0, 6);
       <TimeLine />
     </section>
     <main>
-      <div class="flex justify-between items-center gap-2">
-        <div class="text-lg font-bold flex items-center gap-2 mb-2">
+      <div class="flex flex-col gap-0 md:justify-between md:flex-row md:items-center md:gap-2">
+        <div class="text-lg font-bold flex items-center gap-2 md:mb-2">
           <Codigo />
           <h2>Mis Proyectos Recientes</h2>
         </div>
         <a
           href="/proyectos/"
-          class="text-base inline-block py-2 underline dark:prose-invert"
+          class="text-base text-center inline-block py-2 underline dark:prose-invert"
           >Todos los proyectos »
         </a>
       </div>

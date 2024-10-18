@@ -1,37 +1,80 @@
 ---
+import Pill from "@src/components/Pill.astro";
 import Layout from "../layouts/Layout.astro";
+import Certificado from "@src/components/Certificado.astro";
+import {certificaciones, tecnologias, habilidades} from "@src/information/data"
+
+
+
 ---
 
-<Layout title="Omar Solis - Sobre Mi">
+<Layout title="Omar Solís - Sobre Mi">
   <section>
-    <main>
-      <div class="w-full md:flex md:items-center gap-16 mb-10">
-        <div class="leading-9">
-          <h1 class="text-center md:text-left text-4xl font-bold mb-4">
-            Un Poco Sobre Mi!
-          </h1>
-          <div>
-            <div class="text-lg space-y-2">
-              <p>
-                Actualmente tengo 25 years de edad, resido en la ciudad de Merida, Yucatan.
-                
-              </p>
-              <p></p>
-            </div>
+    <div class="w-full flex flex-col gap-5 md:flex-row md:items-center md:gap-16 mb-10">
+      <div class="leading-9">
+        <h1 class="text-zinc-900 dark:text-white text-center md:text-left text-4xl font-bold mb-4">
+          Un Poco Sobre Mi!
+        </h1>
+        <div>
+          <div class="space-y-2">
+            <p class="text-zinc-900 dark:text-white text-lg">
+              Tengo 25 años y actualmente resido en Mérida, Yucatán. Mi pasión es el desarrollo web, especialmente en el área de 
+              <span class="text-orange-600 dark:text-blue-500 font-semibold">
+                Frontend
+              </span>.
+            </p>
+            <p class="text-zinc-900 dark:text-white text-lg">Me caracterizo por mi habilidad para trabajar en equipo y comunicarme de manera clara y efectiva. Soy una persona curiosa, siempre en busca de nuevos conocimientos, y disfruto mucho del aprendizaje autodidacta. Además, me encanta enseñar y guiar a otras personas, compartiendo lo que he aprendido a lo largo de mi carrera.
+            </p>
           </div>
         </div>
-        <img
-          src="/omarLogo.jpeg"
-          alt="Omar Solis"
-          loading="eager"
-          class="rounded-3xl rotate-3 mx-4 md:mx-0"
-          width="300"
-          height="300"
-          decoding="async"
-        />
       </div>
-    </main>
+      <img
+        src="/omarLogo.jpeg"
+        alt="Omar Solis"
+        loading="eager"
+        class="rounded-3xl rotate-3  mx-4 md:mx-0 "
+        width="300"
+        height="300"
+        decoding="async"
+      />
+    </div>
   </section>
+  <main class="mt-10">
+    <h2 class="text-center md:text-left text-4xl font-bold mb-8 text-zinc-900 dark:text-white">
+      Tecnologías con las que trabajo
+    </h2>
+    <ul class=" flex flex-wrap lg:flex-nowrap justify-center md:justify-normal  gap-5 mt-5 ">
+      {
+        tecnologias.map((t) => (
+          <li>
+            <img class="size-10" src=`/icons/${t.tecnologia}.svg` alt=`Icono de ${t.tecnologia}` title=`Icono de ${t.tecnologia}` />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-20">
+      <h2 class="text-center md:text-left text-4xl font-bold ">
+      Habilidades Blandas
+    </h2>
+        <ul class="flex gap-x-1 gap-y-3 mt-5 flex-wrap justify-center md:justify-normal">
+      {
+        habilidades.map((skill) => (
+        <Pill skill={skill.habilidad} />
+        ))
+      }
+    </ul>
+    </div>
+    <div class="mt-20">
+      <h2 class="text-center md:text-left text-4xl font-bold text-zinc-900 dark:text-white">
+      Certificados
+    </h2>
+    <ul class="mt-5 flex flex-col gap-3">
+      {
+        certificaciones.map(certificado => <Certificado certificado={certificado} />)
+      }
+    </ul>
+    </div>
+  </main>
 </Layout>
 
 <style>
