@@ -18,8 +18,8 @@ export const projects: Project[] = [
   {
     titulo: "CRM-Dev.com",
     categoria: "FullStack",
-    descripcion: "CRM para administrar empleados, agendar citas, roles, etc",
-    demoLink: "http://devomar-crmdev.x10.mx/",
+    descripcion: "CRM para administrar empleados, agendar citas, roles, etc.",
+    demoLink: "https://devomar-crmdev.x10.bz/",
     repoLink: "https://github.com/Dev-socar/CRM-Dev",
     tecnologias: ["php", "mysql", "javascript", "tailwind", "html", "godaddy"],
   },
