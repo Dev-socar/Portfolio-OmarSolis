@@ -199,7 +199,7 @@ export const iconos: { [key: string]: string } = {
   vue: "/icons/Vue.svg",
   vite: "/icons/Vite.svg",
   react: "/icons/React.svg",
-  php: "/icons/PHP.svg",
+  php: "/icons/Php.svg",
   tailwind: "/icons/Tailwind.svg",
   javascript: "/icons/JS.svg",
   css: "/icons/CSS.svg",
