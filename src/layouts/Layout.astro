@@ -32,6 +32,14 @@ const { title } = Astro.props;
   </body>
 </html>
 
+<script>
+  import { setupAos } from "../js/setupAos";
+  setupAos();
+
+  document.addEventListener("DOMContentLoaded", setupAos);
+  document.addEventListener("astro:page-load", setupAos);
+</script>
+
 <style is:global>
   .time-line-container > div:last-child .education__time > .education__line {
     display: none;

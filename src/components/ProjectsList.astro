@@ -1,10 +1,13 @@
 ---
-
 import ProjectItem from "../components/ProjectItem.astro";
+
 
 const { proyectos } = Astro.props;
 ---
 
-<div class="grid grid-cols-12 gap-5">
-  {proyectos.map((proyecto:string[]) => <ProjectItem proyecto={proyecto} />)}
+<div
+  class="grid grid-cols-12 gap-5"
+  
+>
+  {proyectos.map((proyecto: string[]) => <ProjectItem proyecto={proyecto} />)}
 </div>

@@ -8,6 +8,21 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    titulo: "fake-store-vue.com",
+    categoria: "Frontend",
+    descripcion: "Ecommerce con funcionalidad de carrito y pago por Paypal",
+    demoLink: "https://fake-store-vue.vercel.app/",
+    repoLink: "https://github.com/Dev-socar/fake-store-vue",
+    tecnologias: ["vue", "vercel", "vite", "tailwind", "pinia", "paypal"],
+  },
+  {
+    titulo: "CRM Tiendita Vue",
+    categoria: "Frontend",
+    descripcion: "Un pequeño CRM usando JSON-SERVER, Composables y Formkit",
+    repoLink: "https://github.com/Dev-socar/CRM-Tiendita-Vue ",
+    tecnologias: ["vue", "vercel", "vite", "tailwind"],
+  },
+  {
     titulo: "Dev-Coctail.com",
     categoria: "Frontend",
     descripcion: "Web App que permite buscar recetas de cocteles",
@@ -119,7 +134,7 @@ export const projects: Project[] = [
     tecnologias: ["javascript", "html", "css", "netlify"],
   },
   {
-    titulo: "Travles.com",
+    titulo: "Traveles.com",
     categoria: "Frontend Maquetacion",
     descripcion:
       "Esta página web es un clon de Airbnb, con el fin de poner en funcionamiento mis conocimientos en el desarrollo web",
@@ -184,7 +199,7 @@ export const iconos: { [key: string]: string } = {
   vue: "/icons/Vue.svg",
   vite: "/icons/Vite.svg",
   react: "/icons/React.svg",
-  php: "/icons/Php.svg",
+  php: "/icons/PHP.svg",
   tailwind: "/icons/Tailwind.svg",
   javascript: "/icons/JS.svg",
   css: "/icons/CSS.svg",
@@ -198,4 +213,6 @@ export const iconos: { [key: string]: string } = {
   netlify: "/icons/Netlify.svg",
   laravel: "/icons/Laravel.svg",
   godaddy: "/icons/Godaddy.svg",
+  pinia: "/icons/Pinia.svg",
+  paypal: "/icons/Paypal.svg",
 };

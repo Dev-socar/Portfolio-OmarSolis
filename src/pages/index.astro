@@ -13,7 +13,9 @@ const lastProjects = projects.slice(0, 6);
 
 <Layout title="Omar Solis - Portafolio Web">
   <section>
-    <div class="w-full flex flex-col gap-5 md:flex-row md:items-center md:gap-16 mb-10">
+    <div
+      class="w-full flex flex-col gap-5 md:flex-row md:items-center md:gap-16 mb-10"
+    >
       <div class="leading-9">
         <h1 class="text-center md:text-left text-4xl font-bold mb-4">
           Hola 👋, Soy Omar!
@@ -24,7 +26,10 @@ const lastProjects = projects.slice(0, 6);
               <LinkedInIcon class="size-6" />
               LinkedIn
             </SocialPill>
-            <SocialPill href="CV_OmarSolisWebDeveloper.pdf" download="CV_OmarSolisWebDeveloper.pdf">
+            <SocialPill
+              href="CV_OmarFernandoSolisCarvajalWebDeveloper.pdf"
+              download="CV_OmarFernandoSolisCarvajalWebDeveloper.pdf"
+            >
               <DownloadIcon class="size-6" />
               CV
             </SocialPill>
@@ -40,15 +45,19 @@ const lastProjects = projects.slice(0, 6);
               +3 años de experiencia. <span
                 class="text-blue-400 dark:text-orange-200"
                 >Desarrollador Web</span
-              > de Mérida, Yucatán 🇲🇽. Me encanta compartir mi conocimiento en mi
-              canal de Youtube
+              > de Mérida, Yucatán 🇲🇽. Me encanta compartir mi conocimiento en mis
+              canales de
+              <a
+                class="text-blue-500 dark:text-orange-500 hover:underline transition"
+                href="https://www.tiktok.com/@omar_solis_dev"
+                target="_blank">Tiktok</a
+              > y
               <a
                 class="text-orange-500 dark:text-blue-500 hover:underline transition"
                 href="https://www.youtube.com/@AmantesDelCodigo"
-                target="_blank">Amantes del Código</a
-              >.
+                target="_blank">Youtube</a
+              > llamados <span class="font-semibold">Amantes del Código.</span>
             </p>
-           
           </div>
         </div>
       </div>
@@ -66,7 +75,9 @@ const lastProjects = projects.slice(0, 6);
       <TimeLine />
     </section>
     <main>
-      <div class="flex flex-col gap-0 md:justify-between md:flex-row md:items-center md:gap-2">
+      <div
+        class="flex flex-col gap-0 md:justify-between md:flex-row md:items-center md:gap-2"
+      >
         <div class="text-lg font-bold flex items-center gap-2 md:mb-2">
           <Codigo />
           <h2>Mis Proyectos Recientes</h2>

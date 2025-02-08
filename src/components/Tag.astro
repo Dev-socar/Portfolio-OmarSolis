@@ -3,16 +3,25 @@ interface Props {
   tecnologia?: string;
 }
 import { iconos } from "@src/projects/project";
-const { tecnologia  } = Astro.props;
+const { tecnologia } = Astro.props;
 const iconUrl = tecnologia ? iconos[tecnologia.toLowerCase()] : null;
 ---
 
-<span
-  class=""
->
+<span>
   {
     iconUrl ? (
-      <img src={iconUrl} alt={tecnologia} title={tecnologia} class="size-6" />
+      <img
+        src={iconUrl}
+        alt={tecnologia}
+        title={tecnologia}
+        class={`size-8 ${
+          tecnologia === "php" ||
+          tecnologia === "vercel" ||
+          tecnologia === "godaddy"
+            ? "bg-white rounded-full"
+            : ""
+        }`}
+      />
     ) : (
       tecnologia
     )
