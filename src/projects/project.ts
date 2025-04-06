@@ -8,6 +8,14 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    titulo: "Devstagram",
+    categoria: "FullStack",
+    descripcion: "Clon de la aplicacion de instagram.",
+    demoLink: "https://devomar-devstagram.mnz.dom.my.id/",
+    repoLink: "https://github.com/Dev-socar/devstagram",
+    tecnologias: ["laravel", "php", "vite", "tailwind"],
+  },
+  {
     titulo: "fake-store-vue.com",
     categoria: "Frontend",
     descripcion: "Ecommerce con funcionalidad de carrito y pago por Paypal",
