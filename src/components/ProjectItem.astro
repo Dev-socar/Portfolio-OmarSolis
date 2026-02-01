@@ -19,7 +19,12 @@ const { tecnologias } = proyecto;
     </div>
   </div>
   <h3 class="font-semibold my-3 text-base text-zinc-900 dark:text-white">
-    <a class="underline" href={proyecto.demoLink}>{proyecto.titulo}</a>
+    <a
+      class="underline"
+      href={proyecto.demoLink}
+      target="_blank"
+      rel="noopener noreferrer">{proyecto.titulo}</a
+    >
   </h3>
   <p class="mb-2 text-sm text-zinc-600 dark:text-zinc-400">
     {proyecto.categoria}

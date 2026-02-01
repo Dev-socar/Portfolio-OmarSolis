@@ -8,6 +8,48 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    titulo: "Grupo RH",
+    categoria: "Frontend",
+    descripcion:
+      "Sitio web para una empresa de desarrollo inmobiliario en Mérida, Yucatan.",
+    demoLink: "https://gruporh.mx/",
+    repoLink: "",
+    tecnologias: ["astro", "vue", "godaddy", "tailwind", "gsap"],
+  },
+  {
+    titulo: "RHEVO Fractionals",
+    categoria: "Frontend",
+    descripcion:
+      "Sitio web de un desarrollo enfocado a la venta de propiedades fractionals.",
+    demoLink: "https://www.rhevofractionals.com/",
+    repoLink: "",
+    tecnologias: ["astro", "vue", "godaddy", "tailwind", "gsap"],
+  },
+  {
+    titulo: "Sunriize",
+    categoria: "Frontend",
+    descripcion: "Landingpage para un fandom de Kpop.",
+    demoLink: "https://www.sunriize.mx/",
+    repoLink: "",
+    tecnologias: ["astro", "vue", "vercel", "tailwind"],
+  },
+  {
+    titulo: "Gran Verona",
+    categoria: "Frontend",
+    descripcion: "Sitio web de un desarrollo inmobiliario en Yucatan.",
+    demoLink: "https://granverona.mx/",
+    repoLink: "",
+    tecnologias: ["astro", "vue", "godaddy", "tailwind", "gsap"],
+  },
+  {
+    titulo: "Centro Integral Veterinario",
+    categoria: "Frontend",
+    descripcion: "Sitio web para un centro veterinario.",
+    demoLink: "https://github.com/Dev-socar/Centro-Integral-Veterinario",
+    repoLink: "",
+    tecnologias: ["astro", "tailwind"],
+  },
+  {
     titulo: "Devstagram",
     categoria: "FullStack",
     descripcion: "Clon de la aplicacion de instagram.",
@@ -42,7 +84,7 @@ export const projects: Project[] = [
     titulo: "CRM-Dev.com",
     categoria: "FullStack",
     descripcion: "CRM para administrar empleados, agendar citas, roles, etc.",
-    demoLink: "https://devomar-crmdev.x10.bz/",
+    demoLink: "",
     repoLink: "https://github.com/Dev-socar/CRM-Dev",
     tecnologias: ["php", "mysql", "javascript", "tailwind", "html", "godaddy"],
   },
@@ -204,6 +246,8 @@ export const projects: Project[] = [
 ];
 
 export const iconos: { [key: string]: string } = {
+  astro: "/icons/Astro.svg",
+  gsap: "/icons/gsap.svg",
   vue: "/icons/Vue.svg",
   vite: "/icons/Vite.svg",
   react: "/icons/React.svg",
