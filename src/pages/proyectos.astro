@@ -4,21 +4,25 @@ import ProjectsList from "@src/components/ProjectsList.astro";
 import { projects } from "@src/projects/project";
 ---
 
-<Layout title="Omar Solis - Proyectos">
-
-    <main class="overflow-hidden">
-      <h1
-        class="text-center text-zinc-900 dark:text-white md:text-left text-4xl font-bold mb-4"
-      >
-        Todos Mis Proyectos
-      </h1>
-      <p class="text-lg mb-10 text-zinc-900 dark:text-white text-center md:text-left">
-        Todo mi portafolio de proyectos, desde proyectos a clientes hasta
-        proyectos personales.
-      </p>
-      <ProjectsList proyectos={projects} />
-    </main>
-
+<Layout
+  title="Omar Solis - Proyectos"
+  description="Listado de todos los proyectos desarrollados por Omar Solís, desde personales hasta trabajos para clientes."
+  keywords="proyectos, portfolio, desarrollo web, Omar Solís"
+>
+  <main class="overflow-hidden">
+    <h1
+      class="text-center text-zinc-900 dark:text-white md:text-left text-4xl font-bold mb-4"
+    >
+      Todos Mis Proyectos
+    </h1>
+    <p
+      class="text-lg mb-10 text-zinc-900 dark:text-white text-center md:text-left"
+    >
+      Todo mi portafolio de proyectos, desde proyectos a clientes hasta
+      proyectos personales.
+    </p>
+    <ProjectsList proyectos={projects} />
+  </main>
 </Layout>
 
 <style>

@@ -5,57 +5,92 @@ import Footer from "@src/components/Footer.astro";
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  keywords?: string;
 }
 
-const { title } = Astro.props;
----
+const {
+  title,
+  description,
+  image,
+  keywords: kwProp,
+} = Astro.props;
 
+const defaultDescription =
+  "Desarrollador web frontend en Mérida, Yucatán, con enfoque en interfaces modernas, trabajo colaborativo y aprendizaje continuo.";
+const metaDescription = description ?? defaultDescription;
+const metaKeywords =
+  kwProp ??
+  "Desarrollador web, frontend, Mérida, Yucatán, portfolio, proyectos, Omar Solís";
+
+const site = Astro.site ?? "https://omarsolisdev.com";
+const canonical = `${site}${Astro.url.pathname}`;
+const ogTitle = title;
+const ogDescription = metaDescription;
+const ogUrl = canonical;
+const ogImage = image ?? `${site}/omarLogo.jpeg`;
+
+// Schema.org structured data
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Omar Solís",
+  url: site,
+  sameAs: [
+    "https://www.linkedin.com/in/omar-fernando-solis/",
+    "https://www.youtube.com/@AmantesDelCodigo",
+    "https://www.tiktok.com/@omar_solis_dev",
+  ],
+  jobTitle: "Desarrollador Web Frontend",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mérida",
+    addressRegion: "Yucatán",
+    addressCountry: "MX",
+  },
+};
+
+const keywords = metaKeywords;
+---
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Desarrollador web frontend en Mérida, Yucatán, con enfoque en interfaces modernas, trabajo colaborativo, aprendizaje continuo y guía a otros desarrolladores."
-    />
-    <meta name="viewport" content="width=device-width" />
+    <!-- basic SEO -->
+    <meta name="description" content={metaDescription} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Omar Solís" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/jpeg" href="/omarLogo.jpeg" />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#ffffff" />
 
-    <meta
-      property="og:title"
-      content="Desarrollador Web Frontend en Mérida | Omar Solís"
-    />
-    <meta
-      property="og:description"
-      content="Desarrollador web frontend de 26 años en Mérida, Yucatán. Apasionado por crear interfaces modernas, aprender de forma autodidacta y compartir conocimiento."
-    />
+      <link rel="sitemap" href="/sitemap-index.xml" />
+
+      
+    <!-- Open Graph -->
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://portfolio-omar-solis.vercel.app/"
-    />
-    <meta
-      property="og:image"
-      content="https://portfolio-omar-solis.vercel.app/omarLogo.jpeg"
-    />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="es_MX" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Desarrollador Web Frontend en Mérida | Omar Solís"
-    />
-    <meta
-      name="twitter:description"
-      content="Frontend developer en Mérida, Yucatán. Interfaces modernas, trabajo en equipo, aprendizaje autodidacta y mentoría."
-    />
-    <meta
-      name="twitter:image"
-      content="https://portfolio-omar-solis.vercel.app/omarLogo.jpeg"
-    />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
 
     <title>{title}</title>
     <ViewTransitions />
+
+    <!-- Schema.org JSON‑LD -->
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
   </head>
   <body
     class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 pt-16 sm:pt-0"

@@ -8,13 +8,22 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    titulo: "ERRE Recubrimientos",
+    categoria: "Frontend",
+    descripcion:
+      "Sitio web para una empresa de recubrimientos industriales en Mérida, Yucatan.",
+    demoLink: "https://errerecubrimientos.com",
+    repoLink: "",
+    tecnologias: ["astro", "typescript", "resend", "tailwind", "gsap"],
+  },
+  {
     titulo: "Grupo RH",
     categoria: "Frontend",
     descripcion:
       "Sitio web para una empresa de desarrollo inmobiliario en Mérida, Yucatan.",
     demoLink: "https://gruporh.mx/",
     repoLink: "",
-    tecnologias: ["astro", "vue", "godaddy", "tailwind", "gsap"],
+    tecnologias: ["astro", "vue", "tailwind", "gsap"],
   },
   {
     titulo: "RHEVO Fractionals",
@@ -23,7 +32,7 @@ export const projects: Project[] = [
       "Sitio web de un desarrollo enfocado a la venta de propiedades fractionals.",
     demoLink: "https://www.rhevofractionals.com/",
     repoLink: "",
-    tecnologias: ["astro", "vue", "godaddy", "tailwind", "gsap"],
+    tecnologias: ["astro", "vue", "tailwind", "gsap"],
   },
   {
     titulo: "Sunriize",
@@ -39,14 +48,14 @@ export const projects: Project[] = [
     descripcion: "Sitio web de un desarrollo inmobiliario en Yucatan.",
     demoLink: "https://granverona.mx/",
     repoLink: "",
-    tecnologias: ["astro", "vue", "godaddy", "tailwind", "gsap"],
+    tecnologias: ["astro", "vue", "tailwind", "gsap"],
   },
   {
     titulo: "Centro Integral Veterinario",
     categoria: "Frontend",
     descripcion: "Sitio web para un centro veterinario.",
-    demoLink: "https://github.com/Dev-socar/Centro-Integral-Veterinario",
-    repoLink: "",
+    demoLink: "https://centro-integral-veterinario.vercel.app/",
+    repoLink: "https://github.com/Dev-socar/Centro-Integral-Veterinario",
     tecnologias: ["astro", "tailwind"],
   },
   {
@@ -86,7 +95,7 @@ export const projects: Project[] = [
     descripcion: "CRM para administrar empleados, agendar citas, roles, etc.",
     demoLink: "",
     repoLink: "https://github.com/Dev-socar/CRM-Dev",
-    tecnologias: ["php", "mysql", "javascript", "tailwind", "html", "godaddy"],
+    tecnologias: ["php", "mysql", "javascript", "tailwind", "html"],
   },
   {
     titulo: "APV.com",
@@ -109,7 +118,7 @@ export const projects: Project[] = [
     descripcion:
       "Sitio web para una empresa de Yucatan, encargada de la venta de terrenos y propiedades.",
     demoLink: "https://corpesainmobiliaria.com/",
-    tecnologias: ["html", "javascript", "css", "php", "mysql", "godaddy"],
+    tecnologias: ["html", "javascript", "css", "php", "mysql"],
   },
   {
     titulo: "DevWebCamp.com",
@@ -117,7 +126,7 @@ export const projects: Project[] = [
     descripcion:
       "Web App para gestionar una pagina de platicas, roles, pasarela de pagos, etc.",
     repoLink: "https://github.com/Dev-socar/DevWebCamp",
-    tecnologias: ["php", "mysql", "javascript", "css", "html", "godaddy"],
+    tecnologias: ["php", "mysql", "javascript", "css", "html"],
   },
   {
     titulo: "Vet-MVC.com",
@@ -125,7 +134,7 @@ export const projects: Project[] = [
     descripcion:
       "Web App para administrar y agendar citas al veterinario, usando MVC.",
     repoLink: "https://github.com/Dev-socar/VET_MVC",
-    tecnologias: ["php", "mysql", "javascript", "css", "html", "godaddy"],
+    tecnologias: ["php", "mysql", "javascript", "css", "html"],
   },
   {
     titulo: "administrador-empleados.com",
@@ -264,7 +273,8 @@ export const iconos: { [key: string]: string } = {
   vercel: "/icons/Vercel.svg",
   netlify: "/icons/Netlify.svg",
   laravel: "/icons/Laravel.svg",
-  godaddy: "/icons/Godaddy.svg",
   pinia: "/icons/Pinia.svg",
   paypal: "/icons/Paypal.svg",
+  typescript: "/icons/Typescript.svg",
+  resend: "/icons/Resend.svg",
 };
