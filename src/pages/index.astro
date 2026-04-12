@@ -65,26 +65,28 @@ const lastProjects = projects.slice(0, 6);
           </div>
         </div>
       </div>
-      <img
-        src="/omarLogo.jpeg"
-        alt="Omar Solis"
-        loading="eager"
-        class="rounded-3xl rotate-3 mx-4 md:mx-0"
-        width="300"
-        height="300"
-        decoding="async"
-      />
+      <div class="flex justify-center">
+        <img
+          src="/omarLogo.jpeg"
+          alt="Omar Solis"
+          loading="eager"
+          class="rounded-3xl rotate-3 mx-4 md:mx-0"
+          width="300"
+          height="300"
+          decoding="async"
+        />
+      </div>
     </div>
     <section>
+      <h2 class="text-4xl font-bold mb-6">Mi Formación</h2>
       <TimeLine />
     </section>
     <main>
       <div
-        class="flex flex-col gap-0 md:justify-between md:flex-row md:items-center md:gap-2"
+        class="flex flex-col items-start gap-0 md:justify-between md:flex-row md:items-center md:gap-2 mb-10"
       >
         <div class="text-lg font-bold flex items-center gap-2 md:mb-2">
-          <Codigo />
-          <h2>Mis Proyectos Recientes</h2>
+          <h2 class="text-4xl">Mis Proyectos Recientes</h2>
         </div>
         <a
           href="/proyectos/"
@@ -94,17 +96,125 @@ const lastProjects = projects.slice(0, 6);
       </div>
       <ProjectsList proyectos={lastProjects} />
     </main>
-  </section>
-</Layout>
 
-<style>
-  section,
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 1000px;
-    max-width: calc(100% - 1rem);
-    font-size: 20px;
-    line-height: 1.6;
-  }
-</style>
+    <section data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="text-4xl font-bold">Contáctame</h2>
+      <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+      <form id="formEmail">
+        <div class="flex flex-col gap-4 mt-6 w-full">
+          <div>
+            <label for="name">Tu nombre</label>
+            <input
+              type="text"
+              placeholder="Tu nombre"
+              name="name"
+              id="name"
+              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+            />
+          </div>
+          <div>
+            <label for="email">Tu correo electrónico</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Tu correo electrónico"
+              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+            />
+          </div>
+          <div>
+            <label for="phone">Tu número de teléfono</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Tu número de teléfono"
+              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+            />
+          </div>
+          <div>
+            <label for="service">Servicio de interés</label>
+            <select
+              name="services"
+              id="services"
+              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+            >
+              <option value="">Selecciona un servicio</option>
+              <option value="landing page">Landing Page</option>
+              <option value="sitio web">Sitio web</option>
+              <option value="aplicacion web">Desarrollo de Aplicaciones web</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Cuéntame más de tu idea</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Tu mensaje"
+              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="border border-white text-black bg-white rounded-md px-4 py-2 hover:bg-transparent hover:text-white transition"
+          >
+            Enviar Mensaje
+          </button>
+        </div>
+      </form>
+    </section>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+  <script defer>
+    const form = document.getElementById("formEmail");
+
+    form?.addEventListener("submit", sendEmail);
+
+    function sendEmail(e) {
+      e.preventDefault();
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+      const servicesInput = document.getElementById("services");
+      const messageInput = document.getElementById("message");
+
+      let params = {
+        name: nameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+        services: servicesInput.value,
+        message: messageInput.value,
+      };
+
+      emailjs
+        .send("service_w6go0rb", "template_bvkb7fl", params)
+        .then(function () {
+         Swal.fire({
+            icon: "success",
+            title: "¡Mensaje enviado!",
+            text: "Gracias por contactarme, te responderé lo antes posible.",
+          });
+          form.reset();
+        })
+        .catch(function () {
+         Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Error al enviar el mensaje, intenta de nuevo.",
+          });
+        });
+    }
+  </script>
+  <style>
+    section,
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 1000px;
+      max-width: calc(100%);
+      font-size: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</Layout>

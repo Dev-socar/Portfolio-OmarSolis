@@ -103,6 +103,17 @@ const keywords = metaKeywords;
     <script type="application/ld+json" is:inline>
   {JSON.stringify(schema)}
 </script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "G8rbfsBtHKz9un_zw",
+      });
+   })();
+</script>
   </head>
   <body
     class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 pt-16 sm:pt-0"
@@ -116,7 +127,8 @@ const keywords = metaKeywords;
 </html>
 
 <script>
-  import { setupAos } from "../js/setupAos";
+
+import { setupAos } from "../js/setupAos";
   setupAos();
 
   document.addEventListener("DOMContentLoaded", setupAos);
