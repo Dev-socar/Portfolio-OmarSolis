@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+
+import { ClientRouter } from 'astro:transitions';
 import Header from "../components/Header.astro";
 import Footer from "@src/components/Footer.astro";
 
@@ -97,7 +98,7 @@ const keywords = metaKeywords;
     <meta name="twitter:image" content={ogImage} />
 
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
 
     <!-- Schema.org JSON‑LD -->
     <script type="application/ld+json" is:inline>

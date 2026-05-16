@@ -100,63 +100,158 @@ const lastProjects = projects.slice(0, 6);
     <section data-aos="fade-up" data-aos-duration="1000">
       <h2 class="text-4xl font-bold">Contáctame</h2>
       <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-      <form id="formEmail">
-        <div class="flex flex-col gap-4 mt-6 w-full">
-          <div>
-            <label for="name">Tu nombre</label>
-            <input
-              type="text"
-              placeholder="Tu nombre"
-              name="name"
-              id="name"
-              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
-            />
+      <form id="formEmail" class="w-full  mx-auto">
+        <div class="flex flex-col gap-5 mt-6 w-full">
+          <!-- Nombre -->
+          <div class="flex flex-col gap-2">
+            <label
+              for="name"
+              class="text-sm font-medium text-white flex items-center gap-1"
+            >
+              Tu nombre
+              <span class="text-red-400">*</span>
+            </label>
+
+            <div class="relative group">
+              <input
+                type="text"
+                placeholder="Ej. Omar Solís"
+                name="name"
+                id="name"
+                required
+                class="peer border border-white/20 bg-white/5 backdrop-blur-md rounded-xl px-4 py-3 outline-none transition-all duration-300 focus:border-red-400 focus:ring-4 focus:ring-red-400/20 w-full text-white placeholder:text-white/50 hover:border-white/40"
+              />
+
+              <span
+                class="absolute left-0 -bottom-5 text-xs text-red-400 opacity-0 peer-invalid:opacity-100 peer-placeholder-shown:opacity-0 transition"
+              >
+                Este campo es obligatorio
+              </span>
+            </div>
           </div>
-          <div>
-            <label for="email">Tu correo electrónico</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Tu correo electrónico"
-              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
-            />
+
+          <!-- Email -->
+          <div class="flex flex-col gap-2">
+            <label
+              for="email"
+              class="text-sm font-medium text-white flex items-center gap-1"
+            >
+              Tu correo electrónico
+              <span class="text-red-400">*</span>
+            </label>
+
+            <div class="relative">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="correo@ejemplo.com"
+                class="peer border border-white/20 bg-white/5 backdrop-blur-md rounded-xl px-4 py-3 outline-none transition-all duration-300 focus:border-red-400 focus:ring-4 focus:ring-red-400/20 w-full text-white placeholder:text-white/50 hover:border-white/40"
+              />
+
+              <span
+                class="absolute left-0 -bottom-5 text-xs text-red-400 opacity-0 peer-invalid:opacity-100 peer-placeholder-shown:opacity-0 transition"
+              >
+                Ingresa un correo válido
+              </span>
+            </div>
           </div>
-          <div>
-            <label for="phone">Tu número de teléfono</label>
+
+          <!-- Teléfono -->
+          <div class="flex flex-col gap-2">
+            <label for="phone" class="text-sm font-medium text-white">
+              Tu número de teléfono
+            </label>
+
             <input
               type="tel"
               name="phone"
               id="phone"
-              placeholder="Tu número de teléfono"
-              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+              placeholder="+52 999 123 4567"
+              class="border border-white/20 bg-white/5 backdrop-blur-md rounded-xl px-4 py-3 outline-none transition-all duration-300 focus:border-red-400 focus:ring-4 focus:ring-red-400/20 w-full text-white placeholder:text-white/50 hover:border-white/40"
             />
           </div>
-          <div>
-            <label for="service">Servicio de interés</label>
-            <select
-              name="services"
-              id="services"
-              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
+
+          <!-- Servicios -->
+          <div class="flex flex-col gap-2">
+            <label
+              for="services"
+              class="text-sm font-medium text-white flex items-center gap-1"
             >
-              <option value="">Selecciona un servicio</option>
-              <option value="landing page">Landing Page</option>
-              <option value="sitio web">Sitio web</option>
-              <option value="aplicacion web">Desarrollo de Aplicaciones web</option>
-            </select>
+              Servicio de interés
+              <span class="text-red-400">*</span>
+            </label>
+
+            <div class="relative">
+              <select
+                name="services"
+                id="services"
+                required
+                class="peer border border-white/20 bg-[#111] rounded-xl px-4 py-3 outline-none transition-all duration-300 focus:border-red-400 focus:ring-4 focus:ring-red-400/20 w-full text-white hover:border-white/40 appearance-none"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="landing page">Landing Page</option>
+                <option value="sitio web">Sitio web</option>
+                <option value="aplicacion web"
+                  >Desarrollo de Aplicaciones Web</option
+                >
+              </select>
+
+              <!-- Flecha -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 pointer-events-none"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+
+              <span
+                class="absolute left-0 -bottom-5 text-xs text-red-400 opacity-0 peer-invalid:opacity-100 transition"
+              >
+                Selecciona una opción
+              </span>
+            </div>
           </div>
-          <div>
-            <label for="message">Cuéntame más de tu idea</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Tu mensaje"
-              class="border border-gray-300 bg-transparent rounded-md px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-white w-full text-white placeholder:text-white/80"
-            ></textarea>
+
+          <!-- Mensaje -->
+          <div class="flex flex-col gap-2">
+            <label
+              for="message"
+              class="text-sm font-medium text-white flex items-center gap-1"
+            >
+              Cuéntame más de tu idea
+              <span class="text-red-400">*</span>
+            </label>
+
+            <div class="relative">
+              <textarea
+                name="message"
+                id="message"
+                required
+                placeholder="Describe tu proyecto..."
+                class="peer border border-white/20 bg-white/5 backdrop-blur-md rounded-2xl px-4 py-3 h-36 resize-none outline-none transition-all duration-300 focus:border-red-400 focus:ring-4 focus:ring-red-400/20 w-full text-white placeholder:text-white/50 hover:border-white/40"
+              ></textarea>
+
+              <span
+                class="absolute left-0 -bottom-5 text-xs text-red-400 opacity-0 peer-invalid:opacity-100 peer-placeholder-shown:opacity-0 transition"
+              >
+                Este campo es obligatorio
+              </span>
+            </div>
           </div>
+
+          <!-- Botón -->
           <button
             type="submit"
-            class="border border-white text-black bg-white rounded-md px-4 py-2 hover:bg-transparent hover:text-white transition"
+            class="mt-4 bg-white text-black font-medium rounded-xl px-6 py-3 transition-all duration-300 hover:bg-transparent hover:text-white border border-white hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-white/10"
           >
             Enviar Mensaje
           </button>
@@ -190,7 +285,7 @@ const lastProjects = projects.slice(0, 6);
       emailjs
         .send("service_w6go0rb", "template_bvkb7fl", params)
         .then(function () {
-         Swal.fire({
+          Swal.fire({
             icon: "success",
             title: "¡Mensaje enviado!",
             text: "Gracias por contactarme, te responderé lo antes posible.",
@@ -198,7 +293,7 @@ const lastProjects = projects.slice(0, 6);
           form.reset();
         })
         .catch(function () {
-         Swal.fire({
+          Swal.fire({
             icon: "error",
             title: "Error",
             text: "Error al enviar el mensaje, intenta de nuevo.",
@@ -215,6 +310,31 @@ const lastProjects = projects.slice(0, 6);
       max-width: calc(100%);
       font-size: 20px;
       line-height: 1.6;
+    }
+
+    @keyframes shake {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(-4px);
+      }
+      40% {
+        transform: translateX(4px);
+      }
+      60% {
+        transform: translateX(-4px);
+      }
+      80% {
+        transform: translateX(4px);
+      }
+    }
+
+    input:invalid:focus,
+    textarea:invalid:focus,
+    select:invalid:focus {
+      animation: shake 0.3s ease-in-out;
     }
   </style>
 </Layout>
